@@ -14,19 +14,17 @@ public class Main {
         int clientDeviceYear = 2014;
         if (clientOS == 0 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else {
-            if (clientOS == 0 && clientDeviceYear < 2015) {
+        } else if (clientOS == 0 && clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             } else if (clientOS == 1 && clientDeviceYear >= 2015) {
                 System.out.println("Установите версию приложения для Android по ссылке");
             } else if (clientOS == 1 && clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             }
-        }
+
         ///Задание 3:
         int year = 2021;
-        boolean subConditions = (year % 4 != 100 || year % 4 == 400);
-        if (year % 4 == 0 && subConditions) {
+        if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
             System.out.println(year + " - высокосный год!");
         } else {
             System.out.println(year + " - не высокосный год!");
